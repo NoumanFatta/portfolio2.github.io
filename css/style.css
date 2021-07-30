@@ -855,11 +855,11 @@ a:hover {
     position: relative;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
     .chefs {
         background-attachment: fixed;
     }
-} */
+}
 
 .chefs::before {
     content: '';
