@@ -64,11 +64,36 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 var linkContainer = document.getElementById("links");
+var togggle_btn = document.getElementById("toggle-btn");
+var navbar = document.getElementById("navbar");
+
 var links = linkContainer.getElementsByClassName("nav-link");
 for (var i = 0; i < links.length; i++) {
     links[i].addEventListener("click", function () {
         var current = linkContainer.getElementsByClassName("active");
         current[0].classList.remove("active");
         this.className += " active";
+        if(navbar.classList.contains("navbar-mobile")){
+            navbar.classList.remove("navbar-mobile");
+            togggle_btn.classList.remove("bi-x");
+            togggle_btn.className += " bi-list";
+        }
     });
 }
+
+togggle_btn.addEventListener("click",function (){
+    if(!navbar.classList.contains("navbar-mobile")){
+        navbar.className += " navbar-mobile";
+    }
+    else{
+        navbar.classList.remove("navbar-mobile")
+    }
+    if(!togggle_btn.classList.contains("bi-x")){
+        togggle_btn.classList.remove("bi-list");
+        togggle_btn.className += " bi-x";
+    }
+    else{
+        togggle_btn.classList.remove("bi-x");
+        togggle_btn.className += " bi-list";
+    }
+});
